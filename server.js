@@ -120,12 +120,13 @@ app.delete("/books/:id", async (req, res) => {
 })
 
 require("dotenv").config()
+const PORT = process.env.PORT || 3000;
 mongoose.connect(process.env.URI)
     .then(() => {
         console.log("connecting mongoDB")
 
-        app.listen(3000, () => {
-            console.log("connecting port 3000")
+        app.listen(PORT, () => {
+            console.log(`connecting port ${PORT}`)
         })
 
     })
