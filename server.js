@@ -14,6 +14,11 @@ app.use((req, res, next) => {
     next();
 });
 
+app.get("/", async (req, res) => {
+    res.status(200).json({
+        message: "Welcome to books API"
+    })
+})
 
 app.get("/books", async (req, res) => {
     try {
